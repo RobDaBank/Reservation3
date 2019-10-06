@@ -13,7 +13,7 @@ export default new router({
             component: reserveTheField
         },
         {
-            path: '/view',
+            path: '/viewreserve',
             component: viewReservation
         }
     ]

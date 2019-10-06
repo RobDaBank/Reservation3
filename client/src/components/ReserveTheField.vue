@@ -98,15 +98,17 @@
                 ></v-select>
               </v-col>
             </v-row>
-            <v-row justify="left">
+            <v-row justify="center">
               <v-col cols="10">
                 <v-btn @click="saveReservation" :class="{ red: !valid, green: valid }">บันทึก</v-btn>
                 <v-btn style="margin-left: 15px;" @click="clear">ยกเลิก</v-btn>
+                <v-btn @click="viewReserve">view</v-btn>
               </v-col>
             </v-row>
             <br />
         </v-form>
       </v-col>
+      
     </v-row>
   </v-container>
   </v-card>
@@ -203,12 +205,15 @@ export default {
         )
         .then(response => {
           console.log(response);
-          this.$router.push("/view");
+          this.$router.push("/viewreserve");
         })
         .catch(e => {
           console.log(e);
         });
       this.submitted = true;
+    },
+    viewReserve(){
+      this.$router.push("/viewreserve");
     },
     clear() {
       this.$refs.form.reset();
@@ -228,6 +233,3 @@ export default {
   }
 }
 </script>
-<style>
- [v-cloak] { display: none; }
-</style>

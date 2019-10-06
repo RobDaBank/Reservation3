@@ -1,37 +1,43 @@
 <template>
-  <b-container>
-    <b-layout text-center wrap>
-      <b-flex mb-4>
+<div class="bg">
+  <v-card style="width:60%; margin:auto; background-color:white">
+  <v-container>
+    <v-layout text-center wrap>
+      <v-flex mb-4>
         <br />
-        <h1 class="display-2 font-weight-bold mb-3">บันทึกเสร็จสิ้น</h1>
-      </b-flex>
-    </b-layout>
-    <b-row justify="center">
-      <b-col cols="8">
-        <b-data-table :headers="headers" :items="items" :items-per-page="5" class="elevation-1">
-        </b-data-table>
-      </b-col>
-    </b-row>
-  </b-container>
+        <h1 class="display-2 font-weight-bold mb-3">Reservation</h1>
+      </v-flex>
+    </v-layout>
+    <v-row justify="center">
+      <v-col cols="8">
+        <v-data-table :headers="headers" :items="items" :items-per-page="5" class="elevation-1">
+        </v-data-table>
+      </v-col>
+    </v-row>
+  </v-container>
+  </v-card>
+  </div>
 </template>
 
 <script>
 import http from "../http-common";
+
 export default {
   name: "viewReservation",
   data() {
     return {
       headers: [
         {
-          text: "Customer",
+          text: "ผู้ใช้บริการ",
           align: "left",
           sortable: false,
           value: "customer.customername"
         },
-        { text: "FieldCategory", value: "fieldcategory.field" },
-        { text: "Date", value: "Date.reservedate" },
-        { text: "Time", value: "timetable.timeString" },
-        { text: "CreateBy", value: "employee.employeename" }
+        { text: "ID ผู้ใช้บริการ", value: "customer.customerid" },
+        { text: "สนามที่จอง", value: "fieldcategory.field" },
+        { text: "วันที่จอง", value: "reservedate" },
+        { text: "เวลาที่จอง", value: "timetable.timeString" },
+        { text: "ทำรายการโดย", value: "employee.employeename" }
       ],
       items: []
     };
