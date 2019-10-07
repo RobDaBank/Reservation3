@@ -1,6 +1,6 @@
 <template>
 <div class="bg">
-  <v-card style="width:50%; margin:auto; background-color:white">
+  <v-card style="width:50%; margin:auto; background-color:#FFFFFF">
   <v-container>
     <v-layout text-center wrap>
       <v-flex mb-4>
@@ -25,7 +25,7 @@
             </v-col>
             <v-col cols="2">
               <div class="my-2">
-                <v-btn @click="findCustomer" depressed large color="gray">ยืนยัน</v-btn>
+                <v-btn @click="findCustomer" depressed large color="#000000" style="color:#FFFFFF">ยืนยัน</v-btn>
               </div>
             </v-col>
           </v-row>
@@ -100,9 +100,9 @@
             </v-row>
             <v-row justify="center">
               <v-col cols="10">
-                <v-btn @click="saveReservation" :class="{ red: !valid, green: valid }">บันทึก</v-btn>
-                <v-btn style="margin-left: 15px;" @click="clear">ยกเลิก</v-btn>
-                <v-btn @click="viewReserve">view</v-btn>
+                <v-btn @click="saveReservation" style="color:#FFFFFF" :class="{ black: !valid, green: valid } ">บันทึก</v-btn>
+                <v-btn @click="clear" color="#000000" style="margin-left: 15px; color:#FFFFFF">ยกเลิก</v-btn>
+                <v-btn @click="viewReserve" color="#000000" style="color:#FFFFFF">ดูบันทึก</v-btn>
               </v-col>
             </v-row>
             <br />
